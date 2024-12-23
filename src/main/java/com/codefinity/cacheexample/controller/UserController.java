@@ -1,7 +1,5 @@
 package com.codefinity.cacheexample.controller;
 
-import com.codefinity.cacheexample.dto.UserRequestDTO;
-import com.codefinity.cacheexample.dto.UserResponseDTO;
 import com.codefinity.cacheexample.model.User;
 import com.codefinity.cacheexample.service.UserService;
 import com.codefinity.cacheexample.service.impl.UserServiceImpl;
@@ -20,14 +18,20 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserResponseDTO> getUser(@PathVariable Long id) {
-        UserResponseDTO user = userService.getUserById(id);
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        User user = userService.getUserById(id);
         return ResponseEntity.ok(user);
     }
 
     @PostMapping
-    public ResponseEntity<UserResponseDTO> createUser(@RequestBody UserRequestDTO user) {
-        UserResponseDTO createdUser = userService.createUser(user);
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User createdUser = userService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<User> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
     }
 }
