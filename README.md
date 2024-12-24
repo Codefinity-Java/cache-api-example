@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REST API with Spring Boot and Redis Caching</title>
-</head>
 <body>
     <h1>REST API with Spring Boot and Redis Caching</h1>
     <p>
@@ -24,7 +17,7 @@
       <li>Spring Boot</li>
       <li>Spring Data JPA</li>
       <li>Redis for caching</li>
-      <li>H2 (or any SQL database) for persistence</li>
+      <li>MySQL</li>
       <li>Java 17+</li>
   </ul>
   
@@ -71,12 +64,5 @@
       <li>Run the application using <code>mvn spring-boot:run</code> or your preferred IDE.</li>
       <li>Use tools like Postman or cURL to interact with the API endpoints.</li>
   </ol>
-  
-  <h2>Future Enhancements</h2>
-  <ul>
-      <li>Implementing user update functionality</li>
-      <li>Adding authentication and authorization</li>
-      <li>Implementing pagination for user lists</li>
-  </ul>
 </body>
 </html>
